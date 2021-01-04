@@ -1,18 +1,9 @@
 def chunked(chunk, obj):
-    count_chunks = len(obj) // chunk
     result = []
     step = 0
-    if 1 < len(obj) != chunk:
-        if count_chunks > 2 and chunk != 1:
-            while step < len(obj):
-                result.append(obj[step:step + 2])
-                step += chunk
-                print(step)
-            return result
-        return [obj[:chunk], obj[chunk:]]
-    elif len(obj) == chunk or len(obj) == 1:
-        result.append(obj)
-        return result
+    while step < len(obj):
+        result.append(obj[step:step + chunk])
+        step += chunk
     return result
 
 
